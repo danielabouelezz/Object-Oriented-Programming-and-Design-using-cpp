@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-/* As we can see for the example below changing the order of the parameters while using
-    the initializer list, won't affect the result.
+/* As we can see for the example below Constructors are called based on Class data members
+    order NOT initalizer list order.
     We used the regular "Commented" constructor and the none regular one below it. */
 
 class MyClass{
@@ -14,13 +14,14 @@ public:
         name(""), lastName(""), age(0), ID(0){};
     /*MyClass(std::string name, std::string lastName, int age, int ID):
         name(name), lastName(lastName), age(age), ID(ID)
-        {
-            std::ostringstream oss;
-            oss<<name<<","<<lastName<<","<<age<<","<<ID;
-        };*/
+        {};*/
     MyClass(std::string name, std::string lastName, int age, int ID):
         age(age), name(name), ID(ID), lastName(lastName){
         }
+
+    ~MyClass(){
+        std::cout<<"\n Destructor \n";
+    }
 
     std::string getName()
     {
