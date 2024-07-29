@@ -7,6 +7,9 @@ public:
     A(){
         std::cout<<"Construct A\n";
     }
+    ~A(){
+        std::cout<<"Destruct A\n";
+    }
 };
 
 class B{
@@ -14,11 +17,17 @@ public:
     B(){
         std::cout<<"Construct B\n";
     }
+    ~B(){
+        std::cout<<"Destruct B\n";
+    }
 };
 class C{
 public:
     C(){
         std::cout<<"Construct C\n";
+    }
+    ~C(){
+        std::cout<<"Destruct C\n";
     }
 };
 
