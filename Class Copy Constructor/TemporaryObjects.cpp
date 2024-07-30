@@ -40,13 +40,27 @@ public:
     }
 };
 
+void play1(MyNumber a){}
+void play2(MyNumber &a){}
+void play3(const MyNumber &a){}
+
+MyNumber play4()
+{
+    MyNumber x(1, 1);
+    return x; //Returned objects is temporary
+}
+
 int main()
 {
-    MyNumber a;      //Normal constructor
-    MyNumber b(a);   //Copy constructor
+    play1(MyNumber());
+    //play2(MyNumger());        //Cannot be bound to a non-const reference
+    play3(MyNumber());
+    //play2(play4());           //Cannot be bound to a non-const reference
 
-    a.PrintValueAndAddress();
-    b.PrintValueAndAddress();
 
+    /* Notice: sometimes the copy constructor won't be called!
+       Due to C++ return value optimization (RVO)
+       It eliminates the temporary object created to hold a function's return value
+    */
     return 0;
 }
