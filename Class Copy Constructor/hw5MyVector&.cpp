@@ -5,8 +5,6 @@
     Notice the int& (return by reference)
     which OOP concept is violated?
     In main, show how a user can abuse our class with such mistake
-
-Note : the original code is at the end.
 */
 
 #include <bits/stdc++.h>
@@ -37,7 +35,7 @@ public:
         return this->arr[pos];
     }
 
-/*  int& GetLen()          // returning the len value by reference violated the encap
+/*  int& GetLen()          // returning the len value by reference violated the data-hiding
     {                      // concept. And as we can see from main we can change the value of
         return len;        // len. which is a mistake and can be abused by the user.
   }
@@ -45,7 +43,7 @@ public:
 
 // The correct GetLen() method
 // The following method will not let us change the value of len.
-    int GetLen() const
+    const int& GetLen() const
     {
         return len;
     }
