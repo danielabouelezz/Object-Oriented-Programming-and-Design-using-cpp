@@ -54,8 +54,6 @@ and the other object’s ptr would point to memory that’s no longer allocated,
 This would likely result in a serious runtime error (such as early program termination) when the pointer was used.
 
 
-By using const, then user can't reset it so we prevent such behaviour
-
 Tip: Rewiew slide Accessor & mutator: The proper way?
 	Careful thinking about your setters and getters
 	In this scenario, returning pointer can make serious problems
