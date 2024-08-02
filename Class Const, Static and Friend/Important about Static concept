@@ -1,0 +1,16 @@
+Why C++ doesn't allow creating const member function?
+Why C++ doesn't allow 'this' pointer to access a static member data?
+
+Answer:
+-Since 'const' is used to specify that a member function does not modify  the state for an instance
+(i.e, it does not modify the instance's member variables), and static member functions do not
+operate on instances at all, applying 'const' to a static member function is meaningless.
+
+-The 'this' pointer in C++ is a special pointer available within non-static member fuctions. It
+points to the object for which the member function is called. In other words, it provides access
+to the instance-specific data member of a class.
+
+Static member funcions do not belong to any particular instance of the class. They are class-level
+function, meaning they can be called on the class itself, not on an instance of the class.
+Therefore, within a static member function, there is no 'this' pointer because there is no instance
+to refer to .
